@@ -45,8 +45,36 @@ class matrix
                         }
                         return add;
                 }
-
-               matrix operator-(matrix temp1)
+                
+            	matrix operator ++()
+            	{
+            		matrix prefix;
+					for(i=0; i<3; i++)
+                       {
+                           for(j=0; j<3; j++)
+                                {
+                                        prefix.m[i][j] = ++m[i][j];
+                                }
+                        
+						}
+					return prefix;
+				}
+				
+				matrix operator ++(int)
+            	{
+            		matrix postfix;
+					for(i=0; i<3; i++)
+                       {
+                           for(j=0; j<3; j++)
+                                {
+                                        postfix.m[i][j] = m[i][j]++;
+                                }
+                        
+						}
+					return postfix;
+				}
+				
+               matrix operator-(matrix temp)
                {
                         matrix sub;
 
@@ -54,11 +82,39 @@ class matrix
                         {
                                 for(j=0; j<3; j++)
                                 {
-                                        sub.m[i][j] = m[i][j] - temp1.m[i][j];
+                                        sub.m[i][j] = m[i][j] - temp.m[i][j];
                                 }
                         }
                         return sub;
                 }
+                
+                matrix operator --()
+            	{
+            		matrix prefix;
+					for(i=0; i<3; i++)
+                       {
+                           for(j=0; j<3; j++)
+                                {
+                                        prefix.m[i][j] = --m[i][j];
+                                }
+                        
+						}
+					return prefix;
+				}
+				
+				matrix operator --(int)
+            	{
+            		matrix postfix;
+					for(i=0; i<3; i++)
+                       {
+                           for(j=0; j<3; j++)
+                                {
+                                        postfix.m[i][j] = m[i][j]--;
+                                }
+                        
+						}
+					return postfix;
+				}
 
 
 };
