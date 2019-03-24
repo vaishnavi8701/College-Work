@@ -32,7 +32,7 @@ class matrix
                         }
                 }
 
-                matrix operator+(matrix temp)
+                matrix operator +(matrix temp)
                 {
                         matrix add;
 
