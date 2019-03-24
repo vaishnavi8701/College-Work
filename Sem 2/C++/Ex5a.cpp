@@ -53,7 +53,7 @@ class mark
                 }
 };
 
-class cms:public personal,public mark
+class cms:public personal, public mark
 {
         public:
         void display()
