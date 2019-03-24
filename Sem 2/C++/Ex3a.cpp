@@ -5,7 +5,6 @@ class arraySum
 {
 	public:
 			int arr[10],i,n,sum;
-			
 			arraySum()
 			{
 				sum = 0;
