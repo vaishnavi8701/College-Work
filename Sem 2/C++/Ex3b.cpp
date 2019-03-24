@@ -8,7 +8,7 @@ class A {
     public:
       A() {
       	numA = 15;
-	  }
+      }
       friend int add(A, B);
       friend int sub(A, B);
       friend int pro(A, B);
