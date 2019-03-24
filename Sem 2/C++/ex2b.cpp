@@ -15,17 +15,13 @@ public:
                 cout << "Enter travelling distance: ";
                 cin >> dist;
                 rate = 2000;
-
-                        if(dist > 300)
+                if(dist > 300)
                         {
                                 for (i=0; i<dist-300; i++)
                                 {
                                     rate = rate + 5;
                                 }
                         }
-
-
-
                 if (dist > 5000)
                 {
                         cout << "You have Exceed our distance capacity.\n";
