@@ -5,7 +5,6 @@ class clock
 {
       public:
                 int hr,min,sec;
-
                 void enterTime()
                 {
                         cout << "Enter the hours,minutes and seconds here: ";
