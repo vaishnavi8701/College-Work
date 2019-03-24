@@ -15,7 +15,6 @@ class vehicle
 			cin >> vehicleNumber;
 			
 		}
-		
 		virtual void show()
 		{
 			cout << "Vehicle Type: " <<type <<endl;
