@@ -7,7 +7,7 @@ class Array{
 	public:
 		Array()
 		{
-			n = 3;
+		     n = 3;
 		}
 		
 		void enter()
