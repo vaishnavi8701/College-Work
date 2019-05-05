@@ -7,7 +7,7 @@ class Array{
 	public:
 		Array()
 		{
-			n = 3;
+		     n = 3;
 		}
 		
 		void enter()
@@ -32,6 +32,8 @@ class Array{
 		}
 		
 		friend Array operator+(Array A,Array B);
+		friend Array operator-(Array A,Array B);
+		friend Array operator*(Array A,Array B);
 };
 
 Array operator+ (Array A,Array B)
@@ -45,13 +47,34 @@ Array operator+ (Array A,Array B)
 	return temp;
 }
 
+Array operator- (Array A,Array B)
+{
+	Array temp;
+	for(int y=0; y<A.n; y++)
+	{
+		temp.m[y] = A.m[y] - B.m[y];	
+	}
+	
+	return temp;
+}
+
+Array operator* (Array A,Array B)
+{
+	Array temp;
+	for(int y=0; y<A.n; y++)
+	{
+		temp.m[y] = A.m[y] * B.m[y];	
+	}
+	
+	return temp;
+}
 
 int main()
 {
 	Array A,B,C;
 	A.enter();
 	B.enter();
-	C = A + B;
+	C = A * B;
 	C.show();
 	return 0;
 }

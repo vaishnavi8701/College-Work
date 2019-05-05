@@ -6,7 +6,6 @@ class train {
         public:
                 char name[size],src[size],dest[size];
                 int age,dob,tickets,dist;
-
                 train()
                 {
                         age = 0;

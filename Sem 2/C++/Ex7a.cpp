@@ -3,7 +3,6 @@ using namespace std;
 
 int main()
 {
-	
 		int a,b;
 		cout << "Enter the Value of A here: ";
 		cin >> a;
