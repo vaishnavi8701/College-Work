@@ -128,6 +128,10 @@ int main()
         C.display();
         D = A - B;
         D.display();
+	++A;
+        A.display();
+        A++;
+        A.display();
         return 0;
 }
 
