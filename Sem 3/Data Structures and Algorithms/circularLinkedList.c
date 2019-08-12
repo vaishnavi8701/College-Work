@@ -30,17 +30,16 @@ void insertAtEnd(int value){
 }
 
 void insertAtBegin(int value){
-	temp = head;
-	head = (struct node *)malloc(sizeof(struct node));
-	head->data = value;
-	head->next = temp;
-	
-	n = temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->data = value;	
+	n = head;
 	do{
 		prev = n;
 		n = n->next;
-	}while(n != temp);
-	prev->next = head;
+	}while(n != head);
+	prev->next = temp;
+	temp->next = head;
+	head = temp;
 	totalNode = totalNode + 1;
 }
 
