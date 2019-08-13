@@ -18,11 +18,11 @@ void create(int value) {
 }
 
 void insert_at_begin(int value){
-	temp = head;
-	head = (struct node *)malloc(sizeof(struct node));
-	head->data = value;
-	head->next = temp;
+	temp = (struct node *)malloc(sizeof(struct node));
+	temp->data = value;
+	temp->next = head;
 	temp->prev = head;
+	head = temp;
 	head->prev = NULL;
 }
 
@@ -193,7 +193,7 @@ int main(){
 					break;
 			case 7:
 					printf("\nDisplaying the Linked List: ");
-					disRev();
+					display();
 					break;
 		}
 		printf("\n");
