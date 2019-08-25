@@ -21,7 +21,7 @@ void insert_at_begin(int value){
 	temp = (struct node *)malloc(sizeof(struct node));
 	temp->data = value;
 	temp->next = head;
-	temp->prev = head;
+	head->prev = temp;
 	head = temp;
 	head->prev = NULL;
 }
@@ -64,10 +64,10 @@ void delete(int value){
 	 	while(n->data != value){
 	 		n = n->next;
 		 }
-		 temp = n;
+		 
 		 (n->prev)->next = n->next;
 		 (n->next)->prev = n->prev;
-		 free(temp);
+		 free(n);
 	 }
 }
 
