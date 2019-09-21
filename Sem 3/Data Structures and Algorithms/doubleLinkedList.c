@@ -137,70 +137,105 @@ void disRev(){
 	printf("\n");
 }
 
+void findByPos(int pos){
+	n = head;
+	count = 1;
+	while(n != NULL && count != pos){
+		n = n->next;
+		count = count + 1;
+	}
+	printf("Node Data: %d", n->data);
+}
+
+void showMiddleElement(){
+	n = head;
+	int totalNodes = 1;
+	while(n->next != NULL){
+		n = n->next;
+		totalNodes++;
+	}
+	
+	if(totalNodes % 2 == 0){
+		findByPos(totalNodes / 2);
+	}else{
+		findByPos((totalNodes / 2) + 1);
+	}
+}
+
 int main(){
-	int choice, data, pos;
+//	int choice, data, pos;
+//	
+//	//Creation of Header Node
+//	printf("Enter the Data to insert at header node: ");
+//	scanf("%d", &data);
+//	create(data);
+//	printf("\n");
+//	do{
+//		printf("Main Menu for Linked List\n");
+//		printf("Press 1 to Insert at end\n");
+//		printf("Press 2 to Insert at beginning\n");
+//		printf("Press 3 to Insert by position\n");
+//		printf("Press 4 to Delete by value\n");
+//		printf("Press 5 to Delete by position\n");
+//		printf("Press 6 to Find element\n");
+//		printf("Press 7 to Display\n");
+//		printf("Press 8 to Exit\n");
+//		printf("Enter your choice here: ");
+//		scanf("%d", &choice);
+//		
+//		switch(choice){
+//			case 1:
+//					printf("\nEnter the value here: ");
+//					scanf("%d", &data);
+//					insert_at_end(data);
+//					break;
+//			case 2:
+//					printf("\nEnter the value here: ");
+//					scanf("%d", &data);
+//					insert_at_begin(data);
+//					break;
+//			case 3:
+//					printf("\nEnter the value here: ");
+//					scanf("%d", &data);
+//					printf("Enter the position here: ");
+//					scanf("%d", &pos);
+//					insert_at_pos(data, pos);
+//					break;
+//			case 4:
+//					printf("\nEnter the value here to delete: ");
+//					scanf("%d", &data);
+//					delete(data);
+//					break;
+//			case 5:
+//					printf("\nEnter the position here to delete: ");
+//					scanf("%d", &pos);
+//					delete_pos(pos);
+//					break;
+//			case 6:
+//					printf("\nEnter the value here to find: ");
+//					scanf("%d", &data);
+//					find(data);
+//					break;
+//			case 7:
+//					printf("\nDisplaying the Linked List: ");
+//					display();
+//					break;
+//		}
+//		printf("\n");
+//	}while(choice != 8);	
+//	
+//	printf("Thank you for using my application\n");
 	
-	//Creation of Header Node
-	printf("Enter the Data to insert at header node: ");
-	scanf("%d", &data);
-	create(data);
-	printf("\n");
-	do{
-		printf("Main Menu for Linked List\n");
-		printf("Press 1 to Insert at end\n");
-		printf("Press 2 to Insert at beginning\n");
-		printf("Press 3 to Insert by position\n");
-		printf("Press 4 to Delete by value\n");
-		printf("Press 5 to Delete by position\n");
-		printf("Press 6 to Find element\n");
-		printf("Press 7 to Display\n");
-		printf("Press 8 to Exit\n");
-		printf("Enter your choice here: ");
-		scanf("%d", &choice);
-		
-		switch(choice){
-			case 1:
-					printf("\nEnter the value here: ");
-					scanf("%d", &data);
-					insert_at_end(data);
-					break;
-			case 2:
-					printf("\nEnter the value here: ");
-					scanf("%d", &data);
-					insert_at_begin(data);
-					break;
-			case 3:
-					printf("\nEnter the value here: ");
-					scanf("%d", &data);
-					printf("Enter the position here: ");
-					scanf("%d", &pos);
-					insert_at_pos(data, pos);
-					break;
-			case 4:
-					printf("\nEnter the value here to delete: ");
-					scanf("%d", &data);
-					delete(data);
-					break;
-			case 5:
-					printf("\nEnter the position here to delete: ");
-					scanf("%d", &pos);
-					delete_pos(pos);
-					break;
-			case 6:
-					printf("\nEnter the value here to find: ");
-					scanf("%d", &data);
-					find(data);
-					break;
-			case 7:
-					printf("\nDisplaying the Linked List: ");
-					display();
-					break;
-		}
-		printf("\n");
-	}while(choice != 8);	
 	
-	printf("Thank you for using my application\n");
-	
+	create(10);
+	insert_at_end(20);
+	insert_at_end(30);
+	insert_at_end(40);
+	insert_at_end(50);
+	insert_at_end(60);
+	insert_at_end(70);
+//	insert_at_end(80);
+	showMiddleElement();
 	return 0;
 }
 
