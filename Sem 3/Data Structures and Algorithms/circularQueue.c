@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define MAX 5
-int items[MAX];
+int queue[MAX];
 int front = -1;
 int rear = -1;
 
@@ -23,7 +23,7 @@ void enqueue(int data){
     {
         if(front == -1) front = 0;
         rear = (rear + 1) % MAX;
-        items[rear] = data;
+        queue[rear] = data;
         printf("Enqueued: %d\n", data);
     }
 }
@@ -34,7 +34,7 @@ int dequeue(){
         printf("\n Queue is empty \n");
         return(-1);
     } else {
-        element = items[front];
+        element = queue[front];
         if (front == rear){
             front = -1;
             rear = -1;
@@ -55,9 +55,9 @@ void display(){
     else
     {
         for(i=front; i!=rear; i=(i+1)%MAX) {
-            printf("%d ",items[i]);
+            printf("%d ",queue[i]);
         }
-        printf("%d ",items[i]);
+        printf("%d ",queue[i]);
         printf("\n");
     }
 }
