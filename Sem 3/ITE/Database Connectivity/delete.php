@@ -9,7 +9,8 @@
         
     if(mysqli_query($connect,$sql)){
         echo 'Deleted Successfully';
-    }else{
+    }
+    else{
         echo 'Not changed';
     }
     
